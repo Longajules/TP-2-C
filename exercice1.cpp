@@ -2,12 +2,13 @@
 #include <random>
 #include <stdio.h>
 
-int empile(int tab[], int* nbval, int value, int capacity) {
+int empile(int *tab, int* nbval, int value, int capacity) {
 
-	if (tab == NULL || nbval == NULL || *nbval < capacity) {
+	if (tab == NULL || nbval == NULL || *nbval > capacity) {
 
 		return 0;
 	}
+	else(tab[(*nbval)++] = value);
 }
 
 void depile() {
@@ -34,17 +35,20 @@ int main() {
 
 	for (int i = 0;i < 20;i++) {
 
-		printf("donnez valeurs a incere dans le tableau");
+		printf("donnez valeurs a incere dans le tableau ");
 		scanf_s("%d", &value);
+		
+		printf("nbval faut %d\n",nbval);
 
-		nbval++;
+		int var = empile(&tab[i], &nbval, capacity, value);
 
-		int empile(tab[i], &nbval, capacity, value);
+		if (var == 0) {
+			printf("erreur\n");
+		}
+		else(printf("aucune erreur detecte\n"));
 	}
 
-	
 	affiche(tab, nbval);
-
 
 	return 0;
 }
