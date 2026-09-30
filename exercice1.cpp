@@ -11,9 +11,14 @@ int empile(int *tab, int* nbval, int value, int capacity) {
 	else(tab[(*nbval)++] = value);
 }
 
-void depile() {
+void depile(int *tab, int* nbval, int capacity) {
+	
 
+	if (tab == NULL || nbval == NULL || nbval == 0) {
 
+		return 0;
+	}
+	else(nbval = nbval - 1);
 }
 
 void affiche(int tab[], int nbval) {
@@ -49,6 +54,17 @@ int main() {
 	}
 
 	affiche(tab, nbval);
+
+	int verif = 0;
+
+	printf("voulez vous depile ? 1 pour oui 0 pour non");
+	scanf("%d", verif);
+
+	if (verif == 1) 
+	{
+		depile(tab, &nbval,capacity);
+	}
+	else(printf("tant pis");
 
 	return 0;
 }
