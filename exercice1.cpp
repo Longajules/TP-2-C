@@ -24,7 +24,12 @@ int depile(int *tab, int* nbval, int capacity) {
 	
 		return 0;
 	}
-	else(*nbval = *nbval - 1);
+	else 
+	{
+		*nbval = *nbval - 1;
+		printf("la valeur supprimer est %d", tab[*nbval]);
+
+	}
 }
 
 void affiche(int *tab, int nbval) {
@@ -51,7 +56,7 @@ int main() {
 		
 		printf("nbval faut %d\n",nbval);
 
-		int var = empile(&tab[i], &nbval, value, capacity);
+		int var = empile(tab, &nbval, value, capacity);
 
 		if (var == 0) {
 			printf("erreur\n");
@@ -64,7 +69,7 @@ int main() {
 	int verif = 0;
 
 	printf("voulez vous depile ? 1 pour oui 0 pour non");
-	scanf_s("%d", verif);
+	scanf_s("%d", &verif);
 
 	if (verif == 1) 
 	{
